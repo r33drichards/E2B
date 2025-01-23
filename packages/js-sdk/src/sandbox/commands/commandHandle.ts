@@ -171,7 +171,9 @@ export class CommandHandle
    * You can reconnect to the command using {@link Commands.connect}.
    */
   async disconnect() {
+    const timestamp = new Date(Date.now()).toISOString()
     this.handleDisconnect()
+    return { timestamp }
   }
 
   /**
